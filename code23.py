@@ -22,7 +22,6 @@ def valof(regs, val):
         return int(val)
     return regs[val]
 
-statuss = ["ok", "ok"]
 c = 0
 while 0 <= pos < len(data):
     curr = data[pos]
@@ -44,7 +43,34 @@ while 0 <= pos < len(data):
 print(c)
 
 
-# del2
+# part 2
+
+# optimized
+
+regs = defaultdict(int)
+
+regs["a"] = 1
+
+b = 106500
+regs["c"] = 123500
+
+c = 0
+
+h = 0
+
+for b in range(106500, 123500 +1, 17):
+    for d in range(2, b):
+        if b % d == 0:
+            h += 1
+            break
+
+
+print(h)
+print(time.time()-start)    
+
+    
+# original
+
 
 regs = defaultdict(int)
 
@@ -54,6 +80,7 @@ regs["b"] = 106500
 regs["c"] = 123500
 
 c = 0
+
 
 while True:
     regs["f"] = 1
